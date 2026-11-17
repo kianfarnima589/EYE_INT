@@ -1,0 +1,866 @@
+[
+  {
+    "name": "CBC News",
+    "country": "Canada",
+    "region": "North America",
+    "website": "https://www.cbc.ca",
+    "rss_url": "https://www.cbc.ca/webfeed/rss/rss-topstories",
+    "type": "Broadcast"
+  },
+  {
+    "name": "CTV News",
+    "country": "Canada",
+    "region": "North America",
+    "website": "https://www.ctvnews.ca",
+    "rss_url": "https://www.ctvnews.ca/rss/TopStories",
+    "type": "Broadcast"
+  },
+  {
+    "name": "Globe and Mail",
+    "country": "Canada",
+    "region": "North America",
+    "website": "https://www.theglobeandmail.com",
+    "rss_url": "https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/world/",
+    "type": "Newspaper"
+  },
+  {
+    "name": "National Post",
+    "country": "Canada",
+    "region": "North America",
+    "website": "https://nationalpost.com",
+    "rss_url": "https://nationalpost.com/feed/",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Toronto Star",
+    "country": "Canada",
+    "region": "North America",
+    "website": "https://www.thestar.com",
+    "rss_url": "https://www.thestar.com/search/?f=rss&t=article&c=news*",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Agence France-Presse (AFP)",
+    "country": "France/International",
+    "region": "North America",
+    "website": "https://www.afp.com",
+    "rss_url": "https://www.afp.com/en/atom.xml",
+    "type": "Wire Service"
+  },
+  {
+    "name": "Reuters",
+    "country": "International",
+    "region": "North America",
+    "website": "https://www.reuters.com",
+    "rss_url": "https://www.reutersagency.com/feed/",
+    "type": "Wire Service"
+  },
+  {
+    "name": "Agencia EFE (Mexico)",
+    "country": "Mexico",
+    "region": "North America",
+    "website": "https://efe.com",
+    "rss_url": "https://efe.com/feed/",
+    "type": "Wire Service"
+  },
+  {
+    "name": "El Universal",
+    "country": "Mexico",
+    "region": "North America",
+    "website": "https://www.eluniversal.com.mx",
+    "rss_url": "https://www.eluniversal.com.mx/rss.xml",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Reforma",
+    "country": "Mexico",
+    "region": "North America",
+    "website": "https://www.reforma.com",
+    "rss_url": "https://www.reforma.com/rss/portada.xml",
+    "type": "Newspaper"
+  },
+  {
+    "name": "ABC News",
+    "country": "US",
+    "region": "North America",
+    "website": "https://abcnews.go.com",
+    "rss_url": "https://feeds.abcnews.com/abcnews/topstories",
+    "type": "Broadcast"
+  },
+  {
+    "name": "Associated Press (AP)",
+    "country": "US",
+    "region": "North America",
+    "website": "https://apnews.com",
+    "rss_url": "https://rsshub.app/apnews/topics/apf-topnews",
+    "type": "Wire Service"
+  },
+  {
+    "name": "Bloomberg News",
+    "country": "US",
+    "region": "North America",
+    "website": "https://www.bloomberg.com",
+    "rss_url": "https://feeds.bloomberg.com/markets/news.rss",
+    "type": "Wire Service"
+  },
+  {
+    "name": "CBS News",
+    "country": "US",
+    "region": "North America",
+    "website": "https://www.cbsnews.com",
+    "rss_url": "https://www.cbsnews.com/latest/rss/main",
+    "type": "Broadcast"
+  },
+  {
+    "name": "CNN",
+    "country": "US",
+    "region": "North America",
+    "website": "https://www.cnn.com",
+    "rss_url": "http://rss.cnn.com/rss/cnn_topstories.rss",
+    "type": "Broadcast"
+  },
+  {
+    "name": "Fox News",
+    "country": "US",
+    "region": "North America",
+    "website": "https://www.foxnews.com",
+    "rss_url": "https://moxie.foxnews.com/google-publisher/latest.xml",
+    "type": "Broadcast"
+  },
+  {
+    "name": "Los Angeles Times",
+    "country": "US",
+    "region": "North America",
+    "website": "https://www.latimes.com",
+    "rss_url": "https://www.latimes.com/world-nation/rss2.0.xml",
+    "type": "Newspaper"
+  },
+  {
+    "name": "NBC News",
+    "country": "US",
+    "region": "North America",
+    "website": "https://www.nbcnews.com",
+    "rss_url": "https://feeds.nbcnews.com/feeds/topstories",
+    "type": "Broadcast"
+  },
+  {
+    "name": "NPR",
+    "country": "US",
+    "region": "North America",
+    "website": "https://www.npr.org",
+    "rss_url": "https://feeds.npr.org/1001/rss.xml",
+    "type": "Broadcast"
+  },
+  {
+    "name": "New York Times",
+    "country": "US",
+    "region": "North America",
+    "website": "https://www.nytimes.com",
+    "rss_url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+    "type": "Newspaper"
+  },
+  {
+    "name": "PBS NewsHour",
+    "country": "US",
+    "region": "North America",
+    "website": "https://www.pbs.org/newshour",
+    "rss_url": "https://www.pbs.org/newshour/feeds/rss/headlines",
+    "type": "Broadcast"
+  },
+  {
+    "name": "Politico",
+    "country": "US",
+    "region": "North America",
+    "website": "https://www.politico.com",
+    "rss_url": "https://rss.politico.com/politics-news.xml",
+    "type": "Digital"
+  },
+  {
+    "name": "The Hill",
+    "country": "US",
+    "region": "North America",
+    "website": "https://thehill.com",
+    "rss_url": "https://thehill.com/feed/",
+    "type": "Digital"
+  },
+  {
+    "name": "USA Today",
+    "country": "US",
+    "region": "North America",
+    "website": "https://www.usatoday.com",
+    "rss_url": "https://rssfeeds.usatoday.com/usatoday-NewsTopStories",
+    "type": "Newspaper"
+  },
+  {
+    "name": "United Press International (UPI)",
+    "country": "US",
+    "region": "North America",
+    "website": "https://www.upi.com",
+    "rss_url": "https://rss.upi.com/news/news.rss",
+    "type": "Wire Service"
+  },
+  {
+    "name": "Wall Street Journal",
+    "country": "US",
+    "region": "North America",
+    "website": "https://www.wsj.com",
+    "rss_url": "https://feeds.content.dowjones.io/public/rss/RSSWorldNews",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Washington Post",
+    "country": "US",
+    "region": "North America",
+    "website": "https://www.washingtonpost.com",
+    "rss_url": "https://feeds.washingtonpost.com/rss/world",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Euronews",
+    "country": "France",
+    "region": "Europe",
+    "website": "https://www.euronews.com",
+    "rss_url": "https://www.euronews.com/rss",
+    "type": "Broadcast"
+  },
+  {
+    "name": "France 24",
+    "country": "France",
+    "region": "Europe",
+    "website": "https://www.france24.com",
+    "rss_url": "https://www.france24.com/en/rss",
+    "type": "Broadcast"
+  },
+  {
+    "name": "Le Monde",
+    "country": "France",
+    "region": "Europe",
+    "website": "https://www.lemonde.fr",
+    "rss_url": "https://www.lemonde.fr/en/rss/une.xml",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Der Spiegel",
+    "country": "Germany",
+    "region": "Europe",
+    "website": "https://www.spiegel.de",
+    "rss_url": "https://www.spiegel.de/international/index.rss",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Deutsche Welle (DW)",
+    "country": "Germany",
+    "region": "Europe",
+    "website": "https://www.dw.com",
+    "rss_url": "https://rss.dw.com/xml/rss-en-all",
+    "type": "Broadcast"
+  },
+  {
+    "name": "Irish Times",
+    "country": "Ireland",
+    "region": "Europe",
+    "website": "https://www.irishtimes.com",
+    "rss_url": "https://www.irishtimes.com/cmlink/news-1.1319192",
+    "type": "Newspaper"
+  },
+  {
+    "name": "RTE News",
+    "country": "Ireland",
+    "region": "Europe",
+    "website": "https://www.rte.ie",
+    "rss_url": "https://www.rte.ie/news/rss/news-headlines.xml",
+    "type": "Broadcast"
+  },
+  {
+    "name": "ANSA",
+    "country": "Italy",
+    "region": "Europe",
+    "website": "https://www.ansa.it",
+    "rss_url": "https://www.ansa.it/sito/ansait_rss.xml",
+    "type": "Wire Service"
+  },
+  {
+    "name": "NOS",
+    "country": "Netherlands",
+    "region": "Europe",
+    "website": "https://nos.nl",
+    "rss_url": "https://feeds.nos.nl/nosnieuwsalgemeen",
+    "type": "Broadcast"
+  },
+  {
+    "name": "NRK",
+    "country": "Norway",
+    "region": "Europe",
+    "website": "https://www.nrk.no",
+    "rss_url": "https://www.nrk.no/toppsaker.rss",
+    "type": "Broadcast"
+  },
+  {
+    "name": "TASS",
+    "country": "Russia",
+    "region": "Europe",
+    "website": "https://tass.com",
+    "rss_url": "https://tass.com/rss/v2.xml",
+    "type": "Wire Service"
+  },
+  {
+    "name": "EFE",
+    "country": "Spain",
+    "region": "Europe",
+    "website": "https://www.efe.com",
+    "rss_url": "https://www.efe.com/efe/english/4/rss",
+    "type": "Wire Service"
+  },
+  {
+    "name": "SVT Nyheter",
+    "country": "Sweden",
+    "region": "Europe",
+    "website": "https://www.svt.se",
+    "rss_url": "https://www.svt.se/nyheter/rss.xml",
+    "type": "Broadcast"
+  },
+  {
+    "name": "Swiss Info (SWI)",
+    "country": "Switzerland",
+    "region": "Europe",
+    "website": "https://www.swissinfo.ch",
+    "rss_url": "https://www.swissinfo.ch/eng/rss/top-news",
+    "type": "Broadcast"
+  },
+  {
+    "name": "BBC News",
+    "country": "UK",
+    "region": "Europe",
+    "website": "https://www.bbc.com",
+    "rss_url": "https://feeds.bbci.co.uk/news/rss.xml",
+    "type": "Broadcast"
+  },
+  {
+    "name": "Sky News",
+    "country": "UK",
+    "region": "Europe",
+    "website": "https://news.sky.com",
+    "rss_url": "https://feeds.skynews.com/feeds/rss/home.xml",
+    "type": "Broadcast"
+  },
+  {
+    "name": "The Guardian",
+    "country": "UK",
+    "region": "Europe",
+    "website": "https://www.theguardian.com",
+    "rss_url": "https://www.theguardian.com/world/rss",
+    "type": "Newspaper"
+  },
+  {
+    "name": "The Telegraph",
+    "country": "UK",
+    "region": "Europe",
+    "website": "https://www.telegraph.co.uk",
+    "rss_url": "https://www.telegraph.co.uk/rss.xml",
+    "type": "Newspaper"
+  },
+  {
+    "name": "ABC News Australia",
+    "country": "Australia",
+    "region": "Asia-Pacific",
+    "website": "https://www.abc.net.au",
+    "rss_url": "https://www.abc.net.au/news/feed/2942460/rss.xml",
+    "type": "Broadcast"
+  },
+  {
+    "name": "Sydney Morning Herald",
+    "country": "Australia",
+    "region": "Asia-Pacific",
+    "website": "https://www.smh.com.au",
+    "rss_url": "https://www.smh.com.au/rss/feed.xml",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Xinhua",
+    "country": "China",
+    "region": "Asia-Pacific",
+    "website": "https://www.xinhuanet.com",
+    "rss_url": "https://rsshub.app/xinhuanet/english",
+    "type": "Wire Service"
+  },
+  {
+    "name": "South China Morning Post",
+    "country": "Hong Kong",
+    "region": "Asia-Pacific",
+    "website": "https://www.scmp.com",
+    "rss_url": "https://www.scmp.com/rss/91/feed",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Hindustan Times",
+    "country": "India",
+    "region": "Asia-Pacific",
+    "website": "https://www.hindustantimes.com",
+    "rss_url": "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml",
+    "type": "Newspaper"
+  },
+  {
+    "name": "NDTV",
+    "country": "India",
+    "region": "Asia-Pacific",
+    "website": "https://www.ndtv.com",
+    "rss_url": "https://feeds.ndtv.com/all-top-stories-news.xml",
+    "type": "Broadcast"
+  },
+  {
+    "name": "Press Trust of India (PTI)",
+    "country": "India",
+    "region": "Asia-Pacific",
+    "website": "https://www.ptinews.com",
+    "rss_url": "https://www.ptinews.com/feed/",
+    "type": "Wire Service"
+  },
+  {
+    "name": "The Hindu",
+    "country": "India",
+    "region": "Asia-Pacific",
+    "website": "https://www.thehindu.com",
+    "rss_url": "https://www.thehindu.com/feeder/default.rss",
+    "type": "Newspaper"
+  },
+  {
+    "name": "The Times of India",
+    "country": "India",
+    "region": "Asia-Pacific",
+    "website": "https://timesofindia.indiatimes.com",
+    "rss_url": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Japan Times",
+    "country": "Japan",
+    "region": "Asia-Pacific",
+    "website": "https://www.japantimes.co.jp",
+    "rss_url": "https://www.japantimes.co.jp/feed/",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Kyodo News",
+    "country": "Japan",
+    "region": "Asia-Pacific",
+    "website": "https://english.kyodonews.net",
+    "rss_url": "https://english.kyodonews.net/rss/all.xml",
+    "type": "Wire Service"
+  },
+  {
+    "name": "NHK World",
+    "country": "Japan",
+    "region": "Asia-Pacific",
+    "website": "https://www3.nhk.or.jp/nhkworld",
+    "rss_url": "https://www3.nhk.or.jp/rss/news/cat0.xml",
+    "type": "Broadcast"
+  },
+  {
+    "name": "New Zealand Herald",
+    "country": "New Zealand",
+    "region": "Asia-Pacific",
+    "website": "https://www.nzherald.co.nz",
+    "rss_url": "https://www.nzherald.co.nz/arc/outboundfeeds/rss/curated/78/?outputType=xml",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Dawn",
+    "country": "Pakistan",
+    "region": "Asia-Pacific",
+    "website": "https://www.dawn.com",
+    "rss_url": "https://www.dawn.com/feeds/home",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Philippine Daily Inquirer",
+    "country": "Philippines",
+    "region": "Asia-Pacific",
+    "website": "https://www.inquirer.net",
+    "rss_url": "https://www.inquirer.net/fullfeed",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Channel News Asia (CNA)",
+    "country": "Singapore",
+    "region": "Asia-Pacific",
+    "website": "https://www.channelnewsasia.com",
+    "rss_url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml",
+    "type": "Broadcast"
+  },
+  {
+    "name": "Straits Times",
+    "country": "Singapore",
+    "region": "Asia-Pacific",
+    "website": "https://www.straitstimes.com",
+    "rss_url": "https://www.straitstimes.com/news/world/rss.xml",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Yonhap News Agency",
+    "country": "South Korea",
+    "region": "Asia-Pacific",
+    "website": "https://en.yna.co.kr",
+    "rss_url": "https://en.yna.co.kr/RSS/news.xml",
+    "type": "Wire Service"
+  },
+  {
+    "name": "Bangkok Post",
+    "country": "Thailand",
+    "region": "Asia-Pacific",
+    "website": "https://www.bangkokpost.com",
+    "rss_url": "https://www.bangkokpost.com/rss/data/topstories.xml",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Vietnam News Agency",
+    "country": "Vietnam",
+    "region": "Asia-Pacific",
+    "website": "https://en.vietnamplus.vn",
+    "rss_url": "https://en.vietnamplus.vn/rss/news.rss",
+    "type": "Wire Service"
+  },
+  {
+    "name": "Iran Press",
+    "country": "Iran",
+    "region": "Middle East & Africa",
+    "website": "https://iranpress.com",
+    "rss_url": "https://iranpress.com/rss",
+    "type": "Wire Service"
+  },
+  {
+    "name": "Haaretz",
+    "country": "Israel",
+    "region": "Middle East & Africa",
+    "website": "https://www.haaretz.com",
+    "rss_url": "https://www.haaretz.com/cmlink/1.628765",
+    "type": "Newspaper"
+  },
+  {
+    "name": "The Times of Israel",
+    "country": "Israel",
+    "region": "Middle East & Africa",
+    "website": "https://www.timesofisrael.com",
+    "rss_url": "https://www.timesofisrael.com/feed/",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Daily Nation",
+    "country": "Kenya",
+    "region": "Middle East & Africa",
+    "website": "https://nation.africa",
+    "rss_url": "https://nation.africa/kenya/news/rss.xml",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Premium Times",
+    "country": "Nigeria",
+    "region": "Middle East & Africa",
+    "website": "https://www.premiumtimesng.com",
+    "rss_url": "https://www.premiumtimesng.com/feed",
+    "type": "Digital"
+  },
+  {
+    "name": "Vanguard",
+    "country": "Nigeria",
+    "region": "Middle East & Africa",
+    "website": "https://www.vanguardngr.com",
+    "rss_url": "https://www.vanguardngr.com/feed/",
+    "type": "Newspaper"
+  },
+  {
+    "name": "WAFA",
+    "country": "Palestine",
+    "region": "Middle East & Africa",
+    "website": "https://english.wafa.ps",
+    "rss_url": "https://english.wafa.ps/RSS.aspx",
+    "type": "Wire Service"
+  },
+  {
+    "name": "Al Jazeera",
+    "country": "Qatar",
+    "region": "Middle East & Africa",
+    "website": "https://www.aljazeera.com",
+    "rss_url": "https://www.aljazeera.com/xml/rss/all.xml",
+    "type": "Broadcast"
+  },
+  {
+    "name": "African News Agency (ANA)",
+    "country": "South Africa",
+    "region": "Middle East & Africa",
+    "website": "https://www.africanews.com",
+    "rss_url": "https://www.africanews.com/feed/",
+    "type": "Wire Service"
+  },
+  {
+    "name": "Daily Maverick",
+    "country": "South Africa",
+    "region": "Middle East & Africa",
+    "website": "https://www.dailymaverick.co.za",
+    "rss_url": "https://www.dailymaverick.co.za/article/feed/",
+    "type": "Digital"
+  },
+  {
+    "name": "Mail & Guardian",
+    "country": "South Africa",
+    "region": "Middle East & Africa",
+    "website": "https://mg.co.za",
+    "rss_url": "https://mg.co.za/feed/",
+    "type": "Newspaper"
+  },
+  {
+    "name": "News24",
+    "country": "South Africa",
+    "region": "Middle East & Africa",
+    "website": "https://www.news24.com",
+    "rss_url": "https://feeds.news24.com/articles/news24/TopStories/rss",
+    "type": "Digital"
+  },
+  {
+    "name": "Anadolu Agency",
+    "country": "Turkey",
+    "region": "Middle East & Africa",
+    "website": "https://www.aa.com.tr",
+    "rss_url": "https://www.aa.com.tr/en/rss/default?cat=world",
+    "type": "Wire Service"
+  },
+  {
+    "name": "TRT World",
+    "country": "Turkey",
+    "region": "Middle East & Africa",
+    "website": "https://www.trtworld.com",
+    "rss_url": "https://www.trtworld.com/rss",
+    "type": "Broadcast"
+  },
+  {
+    "name": "Al Arabiya",
+    "country": "UAE",
+    "region": "Middle East & Africa",
+    "website": "https://english.alarabiya.net",
+    "rss_url": "https://english.alarabiya.net/tools/rss",
+    "type": "Broadcast"
+  },
+  {
+    "name": "Gulf News",
+    "country": "UAE",
+    "region": "Middle East & Africa",
+    "website": "https://gulfnews.com",
+    "rss_url": "https://gulfnews.com/rss",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Middle East Eye",
+    "country": "UK/Middle East",
+    "region": "Middle East & Africa",
+    "website": "https://www.middleeasteye.net",
+    "rss_url": "https://www.middleeasteye.net/rss",
+    "type": "Digital"
+  },
+  {
+    "name": "Al Monitor",
+    "country": "US/Middle East",
+    "region": "Middle East & Africa",
+    "website": "https://www.al-monitor.com",
+    "rss_url": "https://www.al-monitor.com/rss",
+    "type": "Digital"
+  },
+  {
+    "name": "Buenos Aires Times",
+    "country": "Argentina",
+    "region": "Latin America",
+    "website": "https://www.batimes.com.ar",
+    "rss_url": "https://www.batimes.com.ar/feed",
+    "type": "Newspaper"
+  },
+  {
+    "name": "La Nacion",
+    "country": "Argentina",
+    "region": "Latin America",
+    "website": "https://www.lanacion.com.ar",
+    "rss_url": "https://www.lanacion.com.ar/arcio/rss/",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Telam",
+    "country": "Argentina",
+    "region": "Latin America",
+    "website": "https://www.telam.com.ar",
+    "rss_url": "https://www.telam.com.ar/rss2/ultimasnoticias.xml",
+    "type": "Wire Service"
+  },
+  {
+    "name": "Folha de Sao Paulo",
+    "country": "Brazil",
+    "region": "Latin America",
+    "website": "https://www.folha.uol.com.br",
+    "rss_url": "https://feeds.folha.uol.com.br/mundo/rss091.xml",
+    "type": "Newspaper"
+  },
+  {
+    "name": "G1 Globo",
+    "country": "Brazil",
+    "region": "Latin America",
+    "website": "https://g1.globo.com",
+    "rss_url": "https://g1.globo.com/rss/g1/",
+    "type": "Digital"
+  },
+  {
+    "name": "O Globo",
+    "country": "Brazil",
+    "region": "Latin America",
+    "website": "https://oglobo.globo.com",
+    "rss_url": "https://oglobo.globo.com/rss.xml",
+    "type": "Newspaper"
+  },
+  {
+    "name": "El Mercurio",
+    "country": "Chile",
+    "region": "Latin America",
+    "website": "https://www.emol.com",
+    "rss_url": "https://www.emol.com/rss/rss.asp",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Caracol Radio",
+    "country": "Colombia",
+    "region": "Latin America",
+    "website": "https://caracol.com.co",
+    "rss_url": "https://caracol.com.co/rss/feed.html",
+    "type": "Broadcast"
+  },
+  {
+    "name": "El Espectador",
+    "country": "Colombia",
+    "region": "Latin America",
+    "website": "https://www.elespectador.com",
+    "rss_url": "https://www.elespectador.com/rss.xml",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Prensa Latina",
+    "country": "Cuba",
+    "region": "Latin America",
+    "website": "https://www.plenglish.com",
+    "rss_url": "https://www.plenglish.com/index.php?o=rss",
+    "type": "Wire Service"
+  },
+  {
+    "name": "Jamaica Observer",
+    "country": "Jamaica",
+    "region": "Latin America",
+    "website": "https://www.jamaicaobserver.com",
+    "rss_url": "https://www.jamaicaobserver.com/feed/",
+    "type": "Newspaper"
+  },
+  {
+    "name": "El Comercio",
+    "country": "Peru",
+    "region": "Latin America",
+    "website": "https://elcomercio.pe",
+    "rss_url": "https://elcomercio.pe/arcio/rss/",
+    "type": "Newspaper"
+  },
+  {
+    "name": "El Pais (Uruguay)",
+    "country": "Uruguay",
+    "region": "Latin America",
+    "website": "https://www.elpais.com.uy",
+    "rss_url": "https://www.elpais.com.uy/rss/",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Mercopress",
+    "country": "Uruguay",
+    "region": "Latin America",
+    "website": "https://en.mercopress.com",
+    "rss_url": "https://en.mercopress.com/rss",
+    "type": "Wire Service"
+  },
+  {
+    "name": "Telesur",
+    "country": "Venezuela",
+    "region": "Latin America",
+    "website": "https://www.telesurenglish.net",
+    "rss_url": "https://www.telesurenglish.net/rss/all.xml",
+    "type": "Broadcast"
+  },
+  {
+    "name": "SBS News",
+    "country": "Australia",
+    "region": "Oceania",
+    "website": "https://www.sbs.com.au/news",
+    "rss_url": "https://www.sbs.com.au/news/feed",
+    "type": "Broadcast"
+  },
+  {
+    "name": "The Australian",
+    "country": "Australia",
+    "region": "Oceania",
+    "website": "https://www.theaustralian.com.au",
+    "rss_url": "https://www.theaustralian.com.au/feed",
+    "type": "Newspaper"
+  },
+  {
+    "name": "The Guardian Australia",
+    "country": "Australia",
+    "region": "Oceania",
+    "website": "https://www.theguardian.com/au",
+    "rss_url": "https://www.theguardian.com/au/rss",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Fiji Times",
+    "country": "Fiji",
+    "region": "Oceania",
+    "website": "https://www.fijitimes.com.fj",
+    "rss_url": "https://www.fijitimes.com.fj/feed/",
+    "type": "Newspaper"
+  },
+  {
+    "name": "Pacific Islands News Association (PINA)",
+    "country": "Fiji",
+    "region": "Oceania",
+    "website": "https://pina.com.fj",
+    "rss_url": "https://pina.com.fj/feed/",
+    "type": "Wire Service"
+  },
+  {
+    "name": "Inter Press Service (IPS)",
+    "country": "International",
+    "region": "Oceania",
+    "website": "https://www.ipsnews.net",
+    "rss_url": "https://www.ipsnews.net/feed/",
+    "type": "Wire Service"
+  },
+  {
+    "name": "RNZ Pacific",
+    "country": "New Zealand",
+    "region": "Oceania",
+    "website": "https://www.rnz.co.nz/international",
+    "rss_url": "https://www.rnz.co.nz/rss/international.xml",
+    "type": "Broadcast"
+  },
+  {
+    "name": "Radio New Zealand",
+    "country": "New Zealand",
+    "region": "Oceania",
+    "website": "https://www.rnz.co.nz",
+    "rss_url": "https://www.rnz.co.nz/rss/national.xml",
+    "type": "Broadcast"
+  },
+  {
+    "name": "Stuff.co.nz",
+    "country": "New Zealand",
+    "region": "Oceania",
+    "website": "https://www.stuff.co.nz",
+    "rss_url": "https://www.stuff.co.nz/rss",
+    "type": "Digital"
+  },
+  {
+    "name": "Samoa Observer",
+    "country": "Samoa",
+    "region": "Oceania",
+    "website": "https://www.samoaobserver.ws",
+    "rss_url": "https://www.samoaobserver.ws/feed",
+    "type": "Newspaper"
+  }
+]

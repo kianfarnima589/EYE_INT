@@ -1,0 +1,658 @@
+/* ────────────────────────────────────────────────────────────────────
+   Mobile-only tokens, primitives, and utilities.
+   Loaded after theme.css.
+   ──────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Native-feel sizing */
+  --tap-min: 44px;                 /* Apple HIG minimum tap target */
+  --topbar-h: 56px;
+  --bottomnav-h: 65px;
+  --fab-size: 56px;
+
+  /* Sheets */
+  --sheet-radius: 20px;
+  --sheet-handle-w: 40px;
+  --sheet-handle-h: 5px;
+  --sheet-shadow: 0 -12px 40px rgba(0, 0, 0, 0.25), 0 -2px 6px rgba(0, 0, 0, 0.1);
+
+  /* iOS-native easing curves */
+  --ease-ios: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-ios-spring: cubic-bezier(0.5, 1.5, 0.5, 1);
+  --duration-sheet: 320ms;
+  --duration-page: 280ms;
+
+  /* Safe areas */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+
+  /* Z-stack for mobile chrome */
+  --z-mobile-topbar: 30;
+  --z-mobile-bottomnav: 30;
+  --z-mobile-fab: 35;
+  --z-mobile-sheet: 80;
+  --z-mobile-reader: 90;
+  --z-mobile-search: 95;
+  --z-mobile-toast: 110;
+}
+
+/* Mobile-default: tighter type, slightly larger tap targets */
+@media (max-width: 767px) {
+  html {
+    /* Avoid font-size adjust on rotation (iOS) */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  body {
+    /* Prevent rubber-band on body but allow inside scroll containers */
+    overscroll-behavior-y: none;
+  }
+
+  /* ── Mobile: strict Blue + White palette ─────────────────────
+     Override the global tokens to a clean two-color system: pure
+     white surfaces and a single blue scale for accents. */
+  :root, .light, [data-theme="light"] {
+    --brand-50:  oklch(0.975 0.020 240);
+    --brand-100: oklch(0.940 0.045 240);
+    --brand-200: oklch(0.870 0.090 240);
+    --brand-300: oklch(0.770 0.140 240);
+    --brand-400: oklch(0.650 0.180 240);
+    --brand-500: oklch(0.560 0.210 240); /* primary */
+    --brand-600: oklch(0.470 0.215 240);
+    --brand-700: oklch(0.380 0.180 240);
+    --brand-800: oklch(0.300 0.130 240);
+    --brand-900: oklch(0.220 0.080 240);
+
+    --background:        #ffffff;
+    --background-subtle: oklch(0.985 0.005 240);
+    --background-muted:  oklch(0.965 0.010 240);
+    --card:              #ffffff;
+    --surface:           #ffffff;
+    --foreground:        oklch(0.18 0.020 240);
+    --foreground-muted:  oklch(0.45 0.020 240);
+    --foreground-subtle: oklch(0.60 0.018 240);
+    --accent:            oklch(0.955 0.020 240);
+    --border-subtle:     oklch(0.94 0.012 240);
+    --border-strong:     oklch(0.86 0.020 240);
+    --primary:           var(--brand-600);
+    --primary-hover:     var(--brand-700);
+  }
+
+  .dark, [data-theme="dark"] {
+    --brand-400: oklch(0.700 0.180 240);
+    --brand-500: oklch(0.620 0.210 240);
+    --brand-600: oklch(0.520 0.215 240);
+
+    --background:        oklch(0.13 0.020 240);
+    --background-subtle: oklch(0.16 0.020 240);
+    --background-muted:  oklch(0.20 0.022 240);
+    --card:              oklch(0.17 0.022 240);
+    --surface:           oklch(0.17 0.022 240);
+    --foreground:        oklch(0.97 0.010 240);
+    --foreground-muted:  oklch(0.72 0.015 240);
+    --foreground-subtle: oklch(0.55 0.018 240);
+    --accent:            oklch(0.24 0.025 240);
+    --border-subtle:     oklch(0.26 0.020 240);
+    --border-strong:     oklch(0.36 0.025 240);
+    --primary:           var(--brand-400);
+    --primary-hover:     var(--brand-300);
+  }
+}
+
+/* ── Mobile-only utilities ─────────────────────────────────── */
+@layer utilities {
+  /* Tap response — kills 300ms delay + ripples */
+  .tap            { touch-action: manipulation; -webkit-tap-highlight-color: transparent; user-select: none; }
+
+  /* Native press feedback */
+  .press          { transition: transform 120ms var(--ease-out-quart), background-color 120ms; }
+  .press:active   { transform: scale(0.96); }
+
+  /* Safe-area paddings */
+  .pt-safe        { padding-top: var(--safe-top); }
+  .pb-safe        { padding-bottom: var(--safe-bottom); }
+  .pl-safe        { padding-left: var(--safe-left); }
+  .pr-safe        { padding-right: var(--safe-right); }
+  .pb-safe-nav    { padding-bottom: calc(var(--bottomnav-h) + var(--safe-bottom)); }
+  .pt-safe-bar    { padding-top: calc(var(--topbar-h) + var(--safe-top)); }
+
+  /* Dynamic viewport-safe sizing */
+  .h-dscreen      { height: 100dvh; }
+  .min-h-dscreen  { min-height: 100dvh; }
+
+  /* Hide scrollbar but keep scroll (for horizontal snap rails) */
+  .scrollbar-none { scrollbar-width: none; -ms-overflow-style: none; }
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+
+  /* Sheet animations */
+  .sheet-enter        { transform: translateY(100%); }
+  .sheet-enter-active { transform: translateY(0); transition: transform var(--duration-sheet) var(--ease-ios); }
+  .sheet-exit         { transform: translateY(0); }
+  .sheet-exit-active  { transform: translateY(100%); transition: transform var(--duration-sheet) var(--ease-ios); }
+
+  .scrim              { background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(2px); }
+}
+
+/* Print: hide all mobile chrome */
+@media print {
+  .mobile-only { display: none !important; }
+}
+
+@keyframes shimmer {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ── Premium AI surface utilities (v2) ────────────────────────── */
+@layer utilities {
+  /* Aurora gradient border — for AI surfaces. Renders behind via mask. */
+  .ai-border {
+    position: relative;
+    isolation: isolate;
+  }
+  .ai-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(
+      from var(--ai-angle, 0deg),
+      oklch(0.78 0.18 256) 0deg,
+      oklch(0.72 0.20 305) 90deg,
+      oklch(0.78 0.18 195) 180deg,
+      oklch(0.72 0.20 256) 270deg,
+      oklch(0.78 0.18 256) 360deg
+    );
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask-composite: exclude;
+    opacity: 0.65;
+    animation: ai-spin 8s linear infinite;
+  }
+  @property --ai-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  @keyframes ai-spin {
+    to { --ai-angle: 360deg; }
+  }
+
+  /* Soft glow halo for AI cards */
+  .ai-glow {
+    box-shadow:
+      0 0 0 1px oklch(from var(--brand-400) l c h / 0.15),
+      0 10px 30px -10px oklch(from var(--brand-500) l c h / 0.35);
+  }
+
+  /* Streaming caret for live AI text */
+  .ai-caret::after {
+    content: "▍";
+    display: inline-block;
+    margin-inline-start: 2px;
+    color: var(--brand-500);
+    animation: ai-blink 900ms steps(2, end) infinite;
+  }
+  @keyframes ai-blink { 50% { opacity: 0; } }
+
+  /* Stagger reveal — use with style="--i: 0/1/2..." on each child */
+  .stagger-child { animation: anim-up var(--duration-normal) var(--ease-out-expo) both; animation-delay: calc(var(--i, 0) * 40ms); }
+}
+
+/* ────────────────────────────────────────────────────────────────────
+   Kian Mobile Theme — monochrome editorial palette derived from the
+   uploaded onboarding spec (Open Sans / #232323 / #FFFFFF / #B6B6B7 /
+   rounded 16-25px / soft drop shadows). Scoped to `.kian-mobile-theme`
+   so the desktop UI is unaffected. The accent picker still drives the
+   --brand-* family, so colored CTAs remain user-customizable.
+   ──────────────────────────────────────────────────────────────────── */
+.kian-mobile-theme {
+  /* Typography — Hanken Grotesk UI + Newsreader serif display (spec),
+     Vazirmatn carries Persian glyphs via per-glyph fallback. */
+  --font-sans: 'Hanken Grotesk', 'Vazirmatn', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Newsreader', 'Estedad', 'Vazirmatn', Georgia, serif;
+
+  /* ── Strider Editorial System — Light Mint + Charcoal on off-white ──
+       • Mint (accent):      #2FB08B / lightest #F2FDFA
+       • Charcoal (primary): #1A1919 / black #000
+       • Surface:            #FFFFFF (pure white)
+       • Neutrals:           #4C4547 / #7E7577 / #CFC4C6 */
+  --kian-mint:       #2FB08B;
+  --kian-mint-tint:  #F2FDFA;
+  --kian-charcoal:   #1A1919;
+  --kian-ink:        #1B1C1C;
+  --kian-grey-600:   #4C4547;
+  --kian-grey-400:   #7E7577;
+
+  /* Brand scale → light mint (anchored #F2FDFA) */
+  --brand-50:  #F2FDFA;
+  --brand-100: #DCF7EF;
+  --brand-200: #BCEFDF;
+  --brand-300: #8FE3C9;
+  --brand-400: #5CD0AD;
+  --brand-500: #2FB08B;   /* fresh mint accent */
+  --brand-600: #229A79;
+  --brand-700: #1B7C62;
+
+  /* Surfaces — pure white */
+  --background:         #FFFFFF;
+  --background-subtle:  #FAFAFA;
+  --background-muted:   #F4F4F5;
+
+  --foreground:         #1B1C1C;
+  --foreground-muted:   #4C4547;
+  --foreground-subtle:  #7E7577;
+
+  --card:               #FFFFFF;
+  --card-foreground:    #1B1C1C;
+  --card-elevated:      #FFFFFF;
+
+  --surface:            #FAFAFA;
+  --accent:             #DCF7EF;   /* pale mint highlight */
+  --accent-foreground:  #0E3F32;
+
+  --primary:            #1A1919;   /* charcoal CTAs (spec) */
+  --primary-foreground: #FFFFFF;
+  --primary-hover:      #000000;
+
+  --secondary:            #EFEDED;
+  --secondary-foreground: #1B1C1C;
+  --muted:              #EFEDED;
+  --muted-foreground:   #7E7577;
+
+  --border:             #CFC4C6;
+  --border-strong:      #7E7577;
+  --border-subtle:      #E4E2E2;
+
+  --input-background:   #FFFFFF;
+  --ring:               rgba(47, 176, 139, 0.5);
+
+  /* Larger, softer radii to match the spec's 16/20/25-px rounding */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 25px;
+  --radius-2xl: 32px;
+
+  /* Editorial elevation — gentle, tonal shadows (subtle over heavy) */
+  --kian-shadow-1: 0 1px 2px rgba(27, 28, 28, 0.04), 0 1px 3px rgba(27, 28, 28, 0.06);
+  --kian-shadow-2: 0 4px 12px rgba(27, 28, 28, 0.07), 0 2px 4px rgba(27, 28, 28, 0.04);
+  --kian-shadow-3: 5px 5px 12px rgba(27, 28, 28, 0.14);
+
+  /* Sheet treatment */
+  --sheet-radius: 25px;
+  --sheet-shadow: 0 -10px 30px rgba(27, 28, 28, 0.16), 0 -2px 6px rgba(27, 28, 28, 0.06);
+}
+
+/* Pure white background (no atmospheric tint) — light mobile only */
+.kian-mobile-theme:not(.dark) {
+  background: var(--background);
+}
+
+.kian-mobile-theme.dark,
+.dark .kian-mobile-theme {
+  /* Dark variant — matte charcoal canvas with bright mint accents.
+     Editorial palette inverted: charcoal surfaces, mint highlights. */
+  --brand-50:  #0E3F32;
+  --brand-100: #155E4A;
+  --brand-200: #1B7C62;
+  --brand-300: #229A79;
+  --brand-400: #2FB08B;
+  --brand-500: #5CD0AD;
+  --brand-600: #8FE3C9;
+  --brand-700: #DCF7EF;
+
+  --background:         #1B1C1C;
+  --background-subtle:  #232424;
+  --background-muted:   #2B2C2C;
+
+  --foreground:         #F2F0F0;
+  --foreground-muted:   #CFC4C6;
+  --foreground-subtle:  #A39A9C;
+
+  --card:               #232424;
+  --card-foreground:    #F2F0F0;
+  --card-elevated:      #2B2C2C;
+
+  --surface:            #232424;
+  --accent:             #5CD0AD;   /* bright mint highlight */
+  --accent-foreground:  #0E3F32;
+
+  --primary:            #5CD0AD;   /* mint CTAs pop on charcoal */
+  --primary-foreground: #0E3F32;
+  --primary-hover:      #8FE3C9;
+
+  --secondary:            #2B2C2C;
+  --secondary-foreground: #F2F0F0;
+  --muted:              #2B2C2C;
+  --muted-foreground:   #A39A9C;
+
+  --border:             #3A3B3B;
+  --border-strong:      #5CD0AD;
+  --border-subtle:      #2B2C2C;
+
+  --input-background:   #232424;
+  --ring:               rgba(92, 208, 173, 0.5);
+
+  --kian-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.5);
+  --kian-shadow-2: 0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
+  --kian-shadow-3: 5px 5px 16px rgba(0, 0, 0, 0.55);
+}
+
+/* Apply the theme typography & treatments globally inside the shell */
+.kian-mobile-theme,
+.kian-mobile-theme * {
+  font-family: var(--font-sans);
+}
+
+/* Re-balance Persian line-height inside the theme (Open Sans renders denser) */
+.kian-mobile-theme[dir="rtl"],
+.kian-mobile-theme [dir="rtl"] {
+  line-height: 1.7;
+  font-feature-settings: "ss01", "kern", "calt";
+}
+
+/* Card primitive aligned to the spec's soft elevated tile */
+.kian-card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--kian-shadow-2);
+}
+.kian-card-flat {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Pill-shaped action buttons (border-radius: 100px in the spec) */
+.kian-pill {
+  border-radius: 100px;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+}
+
+/* ────────────────────────────────────────────────────────────────────
+   Bottom nav (ui-styles.css spec)
+   • White bar with a downward concave notch at top-center
+   • Raised circular FAB (dark) protruding through the notch
+   • Side icons sit on the bar, active state = small dot under icon
+   ──────────────────────────────────────────────────────────────────── */
+.kian-bottomnav {
+  height: calc(65px + var(--safe-bottom));
+  background: transparent;
+  filter: drop-shadow(0 -6px 18px rgba(0, 0, 0, 0.08))
+          drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.04));
+}
+.kian-bottomnav-svg path {
+  transition: fill 200ms var(--ease-ios);
+}
+.kian-bottomnav-fab {
+  box-shadow:
+    0 8px 20px -4px rgba(0, 0, 0, 0.30),
+    0 2px 6px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 4px var(--background);
+  transition: transform 160ms var(--ease-ios), background-color 200ms;
+}
+.kian-bottomnav-fab:active { transform: translateX(-50%) scale(0.95); }
+
+.dark .kian-bottomnav {
+  filter: drop-shadow(0 -6px 18px rgba(0, 0, 0, 0.55))
+          drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.35));
+}
+.dark .kian-bottomnav-fab {
+  box-shadow:
+    0 8px 20px -4px rgba(0, 0, 0, 0.55),
+    0 2px 6px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 4px var(--background);
+}
+
+/* Display heading scale taken from spec (40 / 32 / 24 / 20) */
+.kian-mobile-theme h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.01em; }
+.kian-mobile-theme h2 { font-size: 24px; font-weight: 700; letter-spacing: -0.005em; }
+.kian-mobile-theme h3 { font-size: 20px; font-weight: 600; }
+
+/* ────────────────────────────────────────────────────────────────────
+   Kian Input System — derived from input-styles.css spec.
+   Three primary variants:
+     • Pill input (auth-style) → .kian-input / base <input>
+     • Chat input (rounded surface) → .kian-input-chat
+     • Search bar (dark/light flip) → .kian-search-bar / .kian-search-bar.on
+   ──────────────────────────────────────────────────────────────────── */
+.kian-mobile-theme {
+  /* Input tokens (from spec) */
+  --input-bg:           #FFFFFF;
+  --input-bg-soft:      #F1F1F1;
+  --input-border:       transparent;
+  --input-border-focus: #1C1C1C;
+  --input-text:         #1C1C1C;
+  --input-placeholder:  #B6B6B7;
+  --input-icon:         #B6B6B7;
+  --input-icon-active:  #1C1C1C;
+  --input-shadow:       5px 5px 10px rgba(0, 0, 0, 0.20);
+  --input-radius-pill:  50px;
+  --input-radius-soft:  30px;
+  --input-radius-rect:  15px;
+  --input-h:            60px;
+  --input-h-chat:       56px;
+  --input-pad-x:        30px;
+  --input-pad-x-soft:   16px;
+  --input-gap:          15px;
+  --input-font-size:    16px;
+  --input-line:         22px;
+  --input-weight:       600;
+  --input-tracking:     0.05em;
+  --send-bg:            #0B4C26;
+  --send-fg:            #FFFFFF;
+}
+
+.kian-mobile-theme.dark,
+.dark .kian-mobile-theme {
+  --input-bg:           #232323;
+  --input-bg-soft:      #2A2A2A;
+  --input-border-focus: #F1F1F1;
+  --input-text:         #F1F1F1;
+  --input-placeholder:  #7A7A7A;
+  --input-icon:         #7A7A7A;
+  --input-icon-active:  #F1F1F1;
+  --input-shadow:       5px 5px 16px rgba(0, 0, 0, 0.45);
+}
+
+/* Base input typography — applies to ALL inputs/textareas/selects within the
+   theme so even Tailwind-styled inputs inherit the Open Sans treatment. */
+.kian-mobile-theme input,
+.kian-mobile-theme textarea,
+.kian-mobile-theme select {
+  font-family: var(--font-sans);
+  font-size: var(--input-font-size);
+  font-weight: var(--input-weight);
+  line-height: var(--input-line);
+  letter-spacing: var(--input-tracking);
+  color: var(--input-text);
+}
+.kian-mobile-theme input::placeholder,
+.kian-mobile-theme textarea::placeholder {
+  color: var(--input-placeholder);
+  font-weight: var(--input-weight);
+  letter-spacing: var(--input-tracking);
+  opacity: 1;
+}
+.kian-mobile-theme input:focus,
+.kian-mobile-theme textarea:focus,
+.kian-mobile-theme select:focus {
+  outline: none;
+}
+
+/* ── Pill input (auth-style) ─────────────────────────────────── */
+.kian-input,
+.kian-mobile-theme input.kian-input {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: var(--input-h);
+  padding: 16px var(--input-pad-x);
+  gap: var(--input-gap);
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--input-radius-pill);
+  box-shadow: var(--input-shadow);
+  color: var(--input-text);
+  transition: border-color 160ms var(--ease-ios, ease), box-shadow 200ms var(--ease-ios, ease);
+}
+.kian-input:focus,
+.kian-input:focus-within,
+.kian-mobile-theme input.kian-input:focus {
+  border-color: var(--input-border-focus);
+}
+
+/* Wrapper that places an icon + vertical divider + input on a pill row */
+.kian-input-group {
+  display: flex;
+  align-items: center;
+  gap: var(--input-gap);
+  width: 100%;
+  height: var(--input-h);
+  padding: 16px var(--input-pad-x);
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--input-radius-pill);
+  box-shadow: var(--input-shadow);
+  transition: border-color 160ms var(--ease-ios, ease);
+}
+.kian-input-group:focus-within { border-color: var(--input-border-focus); }
+.kian-input-group > input,
+.kian-input-group > textarea {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 28px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+.kian-input-group .kian-input-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--input-icon);
+  flex: none;
+}
+.kian-input-group:focus-within .kian-input-icon { color: var(--input-icon-active); }
+.kian-input-divider {
+  display: inline-block;
+  width: 1px;
+  height: 24px;
+  background: var(--input-icon);
+  flex: none;
+}
+.kian-input-group:focus-within .kian-input-divider { background: var(--input-icon-active); }
+
+/* ── Chat input (rounded soft surface + send pill) ───────────── */
+.kian-input-chat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: var(--input-h-chat);
+  padding: 16px;
+  background: var(--input-bg-soft);
+  border: 0.5px solid transparent;
+  border-radius: var(--input-radius-soft);
+  transition: border-color 160ms var(--ease-ios, ease);
+}
+.kian-input-chat:focus-within { border-color: var(--input-border-focus); }
+.kian-input-chat > input,
+.kian-input-chat > textarea {
+  flex: 1 1 auto;
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: var(--input-text);
+}
+.kian-send-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 100px;
+  background: var(--send-bg);
+  color: var(--send-fg);
+  box-shadow: var(--input-shadow);
+  flex: none;
+  transition: transform 120ms var(--ease-ios, ease), background-color 160ms;
+}
+.kian-send-btn:active { transform: scale(0.96); }
+.kian-send-btn:disabled { opacity: 0.45; box-shadow: none; }
+
+/* ── Search bar (Off=dark, On=white) ─────────────────────────── */
+.kian-search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 30px;
+  background: #232323;
+  color: #FFFFFF;
+  border-radius: var(--input-radius-rect);
+  box-shadow: var(--input-shadow);
+  transition: background-color 200ms var(--ease-ios, ease), color 200ms;
+}
+.kian-search-bar.on,
+.kian-search-bar:focus-within {
+  background: var(--input-bg);
+  color: var(--input-text);
+}
+.kian-search-bar > input {
+  flex: 1 1 auto;
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  padding: 0 12px;
+  color: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 18px;
+}
+.kian-search-bar > input::placeholder { color: currentColor; opacity: 0.7; }
+
+/* Dark mode flips the off-state to keep contrast against #1C1C1C bg */
+.kian-mobile-theme.dark .kian-search-bar,
+.dark .kian-mobile-theme .kian-search-bar {
+  background: #2A2A2A;
+  color: #F1F1F1;
+}
+.kian-mobile-theme.dark .kian-search-bar.on,
+.dark .kian-mobile-theme .kian-search-bar.on {
+  background: #F1F1F1;
+  color: #1C1C1C;
+}
+
+/* Disabled state — applies across all input variants */
+.kian-input:disabled,
+.kian-input-group:has(input:disabled),
+.kian-input-chat:has(input:disabled) {
+  opacity: 0.55;
+  box-shadow: none;
+}
+
+/* ────────────────────────────────────────────────────────────────────
+   Desktop Studio host — the desktop workspace reuses the mobile Studio
+   sub-screens (which assume a full mobile viewport). Neutralize their
+   full-height + bottom-nav padding so they flow naturally inside the
+   desktop content panel (single scroll, no clipped action bars).
+   ──────────────────────────────────────────────────────────────────── */
+.studio-desktop-host .h-dscreen {
+  height: auto !important;
+  min-height: 100%;
+}
+.studio-desktop-host main[style] {
+  padding-bottom: 0 !important;
+}

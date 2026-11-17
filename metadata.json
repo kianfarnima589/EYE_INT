@@ -1,0 +1,8 @@
+{
+  "name": "کیان (Flow) — خبرخوان هوشمند فارسی و رصد رسانه",
+  "description": "خبرخوان هوشمند RSS فارسی و بین‌المللی با قابلیت دسته‌بندی، جستجوی معنایی، گراف رسانه، رصد اجتماعی و بسته‌های خبری سفارشی.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
